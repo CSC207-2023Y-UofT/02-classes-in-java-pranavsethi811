@@ -79,9 +79,19 @@ public class Silly implements Comparable<Silly>{
      *       strings (e.g. this.name = [first string] + [second string]).
      *       Make sure you document this method!
      */
+
+    /**
+     * Creates a new Silly object.
+     * This constructor takes in two Strings as arguments.
+     * 
+     * @param first the first string
+     * @param second the second string
+     * @return a new Silly object with name set to the concatenation of first and second
+     */
     public Silly(String first, String second) {
         this.name = first + second;
     }
+
 
 
 
@@ -119,14 +129,14 @@ public class Silly implements Comparable<Silly>{
         y.countStatic();
         x.countStatic();
         x.countStatic();
-        int[] expected_values = {0,1,2,3};
+        int[] expected_values = {0, 1, 2, 3};
 
         System.out.println("The countStatic calls will return " + Arrays.toString(expected_values));
     }
 
     /**
      * 3. Whenever we try to build a string with an Object, the toString()
-     *    method is called. This is equivalent to the __str__ method in Python.
+     *    method is called. This is equivalent to the _str_ method in Python.
      *
      *    (Relevant reading: 2.3. toString)
      *
@@ -137,12 +147,12 @@ public class Silly implements Comparable<Silly>{
     @Override
     public String toString(){
         // TODO (Task 3): Implement the body of this method!
+        return this.name;
     }
-    return this.name;
 
     /**
      * 4. We can also override the equals() method, which is the equivalent of
-     *    Python's __eq__; however, unlike Python, this is called when we use
+     *    Python's _eq_; however, unlike Python, this is called when we use
      *    .equals() rather than == (which checks for ID equality in Java).
      *
      *    (Relevant reading: 2.4. Equality)
@@ -212,4 +222,3 @@ public class Silly implements Comparable<Silly>{
      *                accordingly.
      */
 }
-
