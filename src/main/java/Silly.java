@@ -79,6 +79,9 @@ public class Silly implements Comparable<Silly>{
      *       strings (e.g. this.name = [first string] + [second string]).
      *       Make sure you document this method!
      */
+    public Silly(String first, String second) {
+        this.name = first + second;
+    }
 
 
 
@@ -116,7 +119,7 @@ public class Silly implements Comparable<Silly>{
         y.countStatic();
         x.countStatic();
         x.countStatic();
-        int[] expected_values = {};
+        int[] expected_values = {0,1,2,3};
 
         System.out.println("The countStatic calls will return " + Arrays.toString(expected_values));
     }
@@ -135,6 +138,7 @@ public class Silly implements Comparable<Silly>{
     public String toString(){
         // TODO (Task 3): Implement the body of this method!
     }
+    return this.name;
 
     /**
      * 4. We can also override the equals() method, which is the equivalent of
@@ -161,6 +165,7 @@ public class Silly implements Comparable<Silly>{
 
         // Hint: to compare strings, we need to use .equals()
         //       e.g. s1.equals(s2)
+        return this.name.equals(other.name);
     }
 
     /**
@@ -194,6 +199,7 @@ public class Silly implements Comparable<Silly>{
          *                You can get the length of a string by using the
          *                .length() method.
          */
+        return this.name.length() - other.name.length();
     }
 
     /*
